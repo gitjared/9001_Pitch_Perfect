@@ -107,15 +107,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-Bv-Wak">
-                                <rect key="frame" x="158" y="303" width="61" height="61"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QIO-Bv-Wak">
+                                <rect key="frame" x="157" y="303" width="61" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="axD-BE-0fN"/>
+                                    <constraint firstAttribute="width" constant="61" id="b0j-dJ-wwe"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="stop"/>
                                 <connections>
                                     <action selector="stopButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="Ccd-W1-blW"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-AL-tGY">
-                                <rect key="frame" x="57" y="160" width="91" height="92"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-AL-tGY">
+                                <rect key="frame" x="61" y="160" width="91" height="92"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="92" id="L6b-GL-6ce"/>
                                     <constraint firstAttribute="width" constant="91" id="UCl-zc-tRI"/>
@@ -126,8 +130,8 @@
                                     <action selector="snailButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="y8t-TA-hHC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOA-4Z-rDo">
-                                <rect key="frame" x="57" y="417" width="91" height="91"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOA-4Z-rDo">
+                                <rect key="frame" x="61" y="417" width="91" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="x0t-Uz-Moy"/>
                                     <constraint firstAttribute="height" constant="91" id="xeC-hE-IX7"/>
@@ -138,8 +142,8 @@
                                     <action selector="chipmunkButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="ExE-dP-uDG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abH-Q2-JGA">
-                                <rect key="frame" x="226" y="160" width="91" height="91"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abH-Q2-JGA">
+                                <rect key="frame" x="230" y="160" width="91" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="91" id="Fn4-6B-v8k"/>
                                     <constraint firstAttribute="height" constant="91" id="jXD-E1-EeS"/>
@@ -150,8 +154,8 @@
                                     <action selector="rabbitButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="7sE-CM-Be1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" misplaced="YES" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-92-2QD">
-                                <rect key="frame" x="227" y="417" width="90" height="91"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-92-2QD">
+                                <rect key="frame" x="231" y="417" width="90" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="OTC-9x-BNl"/>
                                     <constraint firstAttribute="width" constant="90" id="Znp-un-ESQ"/>
@@ -169,10 +173,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="fdg-AL-tGY" secondAttribute="trailing" constant="207" id="DFK-Rg-xFx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vOA-4Z-rDo" secondAttribute="trailing" constant="207" id="KqQ-5c-WN2"/>
                             <constraint firstItem="fdg-AL-tGY" firstAttribute="top" secondItem="Sup-Ez-xjA" secondAttribute="bottom" constant="96" id="Nhw-pX-q5o"/>
+                            <constraint firstItem="QIO-Bv-Wak" firstAttribute="centerX" secondItem="qEa-Ct-h4h" secondAttribute="centerX" id="bsI-Mu-3ug"/>
                             <constraint firstAttribute="trailingMargin" secondItem="abH-Q2-JGA" secondAttribute="trailing" constant="38" id="juh-jL-FzZ"/>
                             <constraint firstItem="abH-Q2-JGA" firstAttribute="top" secondItem="Sup-Ez-xjA" secondAttribute="bottom" constant="96" id="ny5-6T-G2L"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JNM-92-2QD" secondAttribute="trailing" constant="38" id="sMg-yy-aHh"/>
                             <constraint firstItem="ITQ-7A-7Rq" firstAttribute="top" secondItem="JNM-92-2QD" secondAttribute="bottom" constant="159" id="syQ-78-cJf"/>
+                            <constraint firstItem="QIO-Bv-Wak" firstAttribute="centerY" secondItem="qEa-Ct-h4h" secondAttribute="centerY" id="vWO-Vs-KFl"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
