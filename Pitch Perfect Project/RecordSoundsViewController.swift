@@ -15,6 +15,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
 
+    @IBOutlet weak var tapToRecord: UILabel!
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
@@ -24,21 +25,25 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         recordingInProgress.hidden = true
+        
     }
     
+        
+        
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func viewWillAppear(animated: Bool) {
-        //Hide the stop button
         stopButton.hidden = true
         recordButton.enabled = true
+        tapToRecord.hidden = false
 }
 
     @IBAction func recordAudio(sender: AnyObject) {
         //Show text "recording in progress"
+        tapToRecord.hidden = true
         stopButton.hidden = false
         recordingInProgress.hidden = false
         recordButton.enabled = false

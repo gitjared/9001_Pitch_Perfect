@@ -13,7 +13,6 @@ class PlaySoundsViewController: UIViewController {
     
     var audioPlayer:AVAudioPlayer!
     var receivedAudio:RecordedAudio!
-    
     var audioEngine:AVAudioEngine!
     var audioFile:AVAudioFile!
     
@@ -37,16 +36,12 @@ class PlaySoundsViewController: UIViewController {
     
     func playAudioWithSnailSpeed(pitch: Float){
         audioPlayer.stop()
+        audioEngine.stop()
+        audioEngine.reset()
+        
         audioPlayer.rate = 0.49
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
-        
-        func playAudioWithVariableSpeed(speed: Float){
-            audioPlayer.stop()
-            audioPlayer.rate = speed
-            audioPlayer.currentTime = 0.0
-            audioPlayer.play()
-        }
     }
     
     @IBAction func rabbitButton(sender: AnyObject) {
@@ -57,16 +52,8 @@ class PlaySoundsViewController: UIViewController {
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
-        
-        audioPlayer.stop()
+
         audioPlayer.rate = 2.50
-        audioPlayer.currentTime = 0.0
-        audioPlayer.play()
-        
-    }
-    func playAudioWithVariableSpeed(speed: Float){
-        audioPlayer.stop()
-        audioPlayer.rate = speed
         audioPlayer.currentTime = 0.0
         audioPlayer.play()
     }
@@ -131,8 +118,6 @@ class PlaySoundsViewController: UIViewController {
         audioEngine.stop()
         audioPlayer.currentTime = 0.0
     }
-    
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
