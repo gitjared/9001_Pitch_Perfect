@@ -31,31 +31,27 @@ class PlaySoundsViewController: UIViewController {
 }
     
     @IBAction func snailButton(sender: AnyObject) {
-        playAudioWithSnailSpeed(0.5)
+        playAudioWithVariableSpeed(0.5)
     }
     
-    func playAudioWithSnailSpeed(pitch: Float){
+    func stopReset(){
         audioPlayer.stop()
         audioEngine.stop()
         audioEngine.reset()
-        
-        audioPlayer.rate = 0.49
         audioPlayer.currentTime = 0.0
+    }
+    
+    func playAudioWithVariableSpeed(rate: Float){
+        stopReset()
+      
+        let changeRateEffect = audioPlayer
+        changeRateEffect.rate = rate
+ 
         audioPlayer.play()
     }
     
     @IBAction func rabbitButton(sender: AnyObject) {
-        playAudioWithRabbitPitch(5.5)
-    }
-    
-    func playAudioWithRabbitPitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-
-        audioPlayer.rate = 2.50
-        audioPlayer.currentTime = 0.0
-        audioPlayer.play()
+        playAudioWithVariableSpeed(2.1)
     }
     
     @IBAction func chipmunkButton(sender: AnyObject) {
@@ -63,9 +59,7 @@ class PlaySoundsViewController: UIViewController {
     }
     
     func playAudioWithVariablePitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
+        stopReset()
         
         let audioPlayerNode = AVAudioPlayerNode()
         audioEngine.attachNode(audioPlayerNode)
@@ -87,36 +81,11 @@ class PlaySoundsViewController: UIViewController {
     }
     
     @IBAction func darthvaderButton(sender: AnyObject) {
-        playAudioWithDarthPitch(-380)
-    }
-    
-    func playAudioWithDarthPitch(pitch: Float){
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioEngine.reset()
-        
-        let audioPlayerNode = AVAudioPlayerNode()
-        audioEngine.attachNode(audioPlayerNode)
-        
-        let changePitchEffect = AVAudioUnitTimePitch()
-        changePitchEffect.pitch = pitch
-        audioEngine.attachNode(changePitchEffect)
-        
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format:nil)
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
-        
-        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
-        do {
-            try audioEngine.start()
-        } catch _ {
-        }
-        audioPlayerNode.play()
+        playAudioWithVariablePitch(-387)
     }
     
     @IBAction func stopButton(sender: AnyObject) {
-        audioPlayer.stop()
-        audioEngine.stop()
-        audioPlayer.currentTime = 0.0
+        stopReset()
     }
     
     override func didReceiveMemoryWarning() {
