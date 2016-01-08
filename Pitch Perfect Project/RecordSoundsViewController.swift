@@ -14,29 +14,25 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     //Declare Globally
     var audioRecorder:AVAudioRecorder!
     var recordedAudio:RecordedAudio!
-
+    
     @IBOutlet weak var tapToRecord: UILabel!
     @IBOutlet weak var recordingInProgress: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         recordingInProgress.hidden = true
     }
-        
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         stopButton.hidden = true
         recordButton.enabled = true
         tapToRecord.hidden = false
-}
-
+    }
+    
     @IBAction func recordAudio(sender: AnyObject) {
         //Show text "recording in progress"
         tapToRecord.hidden = true
@@ -75,7 +71,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
             recordedAudio = RecordedAudio(filePathURL: recorder.url, title: recorder.url.lastPathComponent!)
-            self.performSegueWithIdentifier("stopRecording", sender: recordedAudio)
+            performSegueWithIdentifier("stopRecording", sender: recordedAudio)
         }else{
             print("Recording was not successful")
             recordButton.enabled = true
@@ -88,10 +84,9 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             let playSoundsVC:PlaySoundsViewController = segue.destinationViewController as! PlaySoundsViewController
             let data = sender as! RecordedAudio
             playSoundsVC.receivedAudio = data
-            
         }
-}
-
+    }
+    
     @IBAction func stopRecording(sender: AnyObject) {
         recordingInProgress.hidden = true
         audioRecorder.stop()
