@@ -34,6 +34,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopButton.hidden = true
         pauseButton.hidden = true
         recordButton.enabled = true
+        recordButton.hidden = false
         tapToRecord.hidden = false
         paused.hidden = true
         resumedRecording.hidden = true
@@ -45,6 +46,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopButton.hidden = false
         recordingInProgress.hidden = false
         recordButton.enabled = false
+        recordButton.hidden = true
         pauseButton.hidden = false
         
         //Return users voice
@@ -77,7 +79,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func pauseRecording(sender: AnyObject) {
         let pauseBtn = sender as! UIButton
-        
         if (!audioRecorder.recording) {
             audioRecorder.record()
         } else {
@@ -87,13 +88,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         paused.hidden = false
         resumedRecording.hidden = true
         pauseBtn.setImage(UIImage(named:"microphone.png"),forState:UIControlState.Normal)
-        
         if(!audioRecorder.recording) {
             audioRecorder.pause()
         } else {
             resumedRecording.hidden = false
             paused.hidden = true
-            pauseBtn.setImage(UIImage(named:"recording.png"),forState:UIControlState.Normal)
+        pauseBtn.setImage(UIImage(named:"recording.png"),forState:UIControlState.Normal)
         }
     }
     
