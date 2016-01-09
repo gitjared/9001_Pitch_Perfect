@@ -28,7 +28,7 @@ class PlaySoundsViewController: UIViewController {
         } catch let error as NSError {
             print("Error loading audio: \(error)")
         }
-}
+    }
     
     @IBAction func snailButton(sender: AnyObject) {
         playAudioWithVariableSpeed(0.5)
@@ -43,10 +43,10 @@ class PlaySoundsViewController: UIViewController {
     
     func playAudioWithVariableSpeed(rate: Float){
         stopReset()
-      
+        
         let changeRateEffect = audioPlayer
         changeRateEffect.rate = rate
- 
+        
         audioPlayer.play()
     }
     

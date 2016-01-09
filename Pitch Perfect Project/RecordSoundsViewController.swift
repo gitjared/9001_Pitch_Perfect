@@ -27,6 +27,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         recordingInProgress.hidden = true
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -42,12 +43,14 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBAction func recordAudio(sender: AnyObject) {
         //Show text "recording in progress"
+        recordButton.enabled = false
+        recordButton.hidden = true
+        pauseButton.hidden = false
         tapToRecord.hidden = true
         stopButton.hidden = false
         recordingInProgress.hidden = false
         recordButton.enabled = false
         recordButton.hidden = true
-        pauseButton.hidden = false
         
         //Return users voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
@@ -86,6 +89,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         }
         recordingInProgress.hidden = true
         paused.hidden = false
+        stopButton.hidden = true
         resumedRecording.hidden = true
         pauseBtn.setImage(UIImage(named:"microphone.png"),forState:UIControlState.Normal)
         if(!audioRecorder.recording) {
@@ -93,6 +97,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         } else {
             resumedRecording.hidden = false
             paused.hidden = true
+            stopButton.hidden = false
         pauseBtn.setImage(UIImage(named:"recording.png"),forState:UIControlState.Normal)
         }
     }
