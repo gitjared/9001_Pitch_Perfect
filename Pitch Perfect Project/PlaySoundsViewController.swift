@@ -93,3 +93,22 @@ class PlaySoundsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+
+/*
+How to create the reverb effect:
+
+Stop all audio
+Create an instance of AVAudioPlayerNode
+Attach this variable to the audioEngine previously created
+Create an instance of AVAudioUnitReverb
+Use loadFactoryPreset to configure the Reverb Audio Unit
+Apply the wetDryMix (normally 50 is enough)
+Attach the instance of AVAudioUnitReverb you created to the audioEngine previously created
+Connect your instance of AVAudioPlayerNode to the AVAudioUnitReverb using .connect
+Connect your instance of AVAudioUnitReverb to your outputNode's audioEngine
+Use the startAndReturnError(nil) property in your audioEngine instance
+Play the instance of AVAudioPlayerNode
+
+*/
+
+

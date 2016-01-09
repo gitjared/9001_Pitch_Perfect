@@ -17,8 +17,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     
     @IBOutlet weak var tapToRecord: UILabel!
     @IBOutlet weak var recordingInProgress: UILabel!
+    @IBOutlet weak var paused: UILabel!
+    @IBOutlet weak var resumedRecording: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var pauseButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +32,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         stopButton.hidden = true
+        pauseButton.hidden = true
         recordButton.enabled = true
         tapToRecord.hidden = false
+        paused.hidden = true
+        resumedRecording.hidden = true
     }
     
     @IBAction func recordAudio(sender: AnyObject) {
@@ -39,6 +45,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         stopButton.hidden = false
         recordingInProgress.hidden = false
         recordButton.enabled = false
+        pauseButton.hidden = false
         
         //Return users voice
         let dirPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0]
@@ -66,6 +73,28 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
         audioRecorder.meteringEnabled = true
         audioRecorder.prepareToRecord()
         audioRecorder.record()
+    }
+    
+    @IBAction func pauseRecording(sender: AnyObject) {
+        let pauseBtn = sender as! UIButton
+        
+        if (!audioRecorder.recording) {
+            audioRecorder.record()
+        } else {
+            audioRecorder.pause()
+        }
+        recordingInProgress.hidden = true
+        paused.hidden = false
+        resumedRecording.hidden = true
+        pauseBtn.setImage(UIImage(named:"microphone.png"),forState:UIControlState.Normal)
+        
+        if(!audioRecorder.recording) {
+            audioRecorder.pause()
+        } else {
+            resumedRecording.hidden = false
+            paused.hidden = true
+            pauseBtn.setImage(UIImage(named:"recording.png"),forState:UIControlState.Normal)
+        }
     }
     
     func audioRecorderDidFinishRecording(recorder: AVAudioRecorder, successfully flag: Bool) {
