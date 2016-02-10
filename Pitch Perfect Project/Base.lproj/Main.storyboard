@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -171,10 +170,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdg-AL-tGY">
-                                <rect key="frame" x="61" y="160" width="91" height="92"/>
+                                <rect key="frame" x="61" y="178" width="91" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="92" id="L6b-GL-6ce"/>
-                                    <constraint firstAttribute="width" constant="91" id="UCl-zc-tRI"/>
+                                    <constraint firstAttribute="width" constant="91" id="ZBg-1s-ojW"/>
+                                    <constraint firstAttribute="height" constant="91" id="ucS-0j-hS6"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="-7" bottom="0.0" right="8"/>
                                 <state key="normal" title="Button" image="snailCircle"/>
@@ -183,10 +182,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOA-4Z-rDo">
-                                <rect key="frame" x="61" y="417" width="91" height="91"/>
+                                <rect key="frame" x="61" y="397" width="91" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="x0t-Uz-Moy"/>
-                                    <constraint firstAttribute="height" constant="91" id="xeC-hE-IX7"/>
+                                    <constraint firstAttribute="height" priority="999" constant="91" id="QqK-5L-e6f"/>
+                                    <constraint firstAttribute="width" priority="999" constant="91" id="dCA-IN-UTe"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="-7" bottom="0.0" right="8"/>
                                 <state key="normal" title="Button" image="chipmunk"/>
@@ -194,23 +193,11 @@
                                     <action selector="chipmunkButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="ExE-dP-uDG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abH-Q2-JGA">
-                                <rect key="frame" x="230" y="160" width="91" height="91"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="91" id="Fn4-6B-v8k"/>
-                                    <constraint firstAttribute="height" constant="91" id="jXD-E1-EeS"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="8" left="1" bottom="0.0" right="8"/>
-                                <state key="normal" title="Button" image="rabbit"/>
-                                <connections>
-                                    <action selector="rabbitButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="7sE-CM-Be1"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNM-92-2QD">
-                                <rect key="frame" x="231" y="417" width="90" height="91"/>
+                                <rect key="frame" x="228" y="397" width="90" height="91"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="OTC-9x-BNl"/>
-                                    <constraint firstAttribute="width" constant="90" id="Znp-un-ESQ"/>
+                                    <constraint firstAttribute="height" constant="91" id="Z2k-DZ-heJ"/>
+                                    <constraint firstAttribute="width" constant="90" id="tiw-mi-K77"/>
                                 </constraints>
                                 <edgeInsets key="layoutMargins" top="8" left="1" bottom="0.0" right="8"/>
                                 <state key="normal" title="Button" image="darthVader"/>
@@ -218,26 +205,78 @@
                                     <action selector="darthvaderButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="tua-kv-dUN"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxH-dc-Zs8">
+                                <rect key="frame" x="61" y="303" width="91" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="C8T-zD-cAW"/>
+                                    <constraint firstAttribute="width" constant="91" id="duB-Xa-dcJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-Ej-n38">
+                                <rect key="frame" x="228" y="303" width="90" height="61"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="UAr-vb-vsG"/>
+                                    <constraint firstAttribute="width" constant="90" id="WEH-D0-TiA"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzx-6T-2eI">
+                                <rect key="frame" x="162" y="397" width="51" height="91"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="Pbk-6K-xS4"/>
+                                    <constraint firstAttribute="height" constant="91" id="ezb-1N-LyL"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVf-Ql-x26">
+                                <rect key="frame" x="162" y="178" width="51" height="91"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="p2f-eb-5cc"/>
+                                    <constraint firstAttribute="width" constant="51" id="s60-qi-1uH"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abH-Q2-JGA">
+                                <rect key="frame" x="228" y="178" width="90" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="2J0-i5-F5g"/>
+                                    <constraint firstAttribute="width" constant="90" id="T1L-Bz-j4e"/>
+                                </constraints>
+                                <edgeInsets key="layoutMargins" top="8" left="1" bottom="0.0" right="8"/>
+                                <state key="normal" title="Button" image="rabbit"/>
+                                <connections>
+                                    <action selector="rabbitButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="7sE-CM-Be1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ITQ-7A-7Rq" firstAttribute="top" secondItem="vOA-4Z-rDo" secondAttribute="bottom" constant="159" id="0vn-Bj-Xfl"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fdg-AL-tGY" secondAttribute="trailing" constant="207" id="DFK-Rg-xFx"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vOA-4Z-rDo" secondAttribute="trailing" constant="207" id="KqQ-5c-WN2"/>
-                            <constraint firstItem="fdg-AL-tGY" firstAttribute="top" secondItem="Sup-Ez-xjA" secondAttribute="bottom" constant="96" id="Nhw-pX-q5o"/>
+                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="baseline" secondItem="JNM-92-2QD" secondAttribute="baseline" id="08Q-Rc-y4i"/>
+                            <constraint firstItem="fzx-6T-2eI" firstAttribute="leading" secondItem="vOA-4Z-rDo" secondAttribute="trailing" constant="10" id="867-Bc-P1G"/>
+                            <constraint firstItem="uWc-Ej-n38" firstAttribute="leading" secondItem="QIO-Bv-Wak" secondAttribute="trailing" constant="10" id="AU7-u8-rUM"/>
+                            <constraint firstItem="QIO-Bv-Wak" firstAttribute="top" secondItem="tVf-Ql-x26" secondAttribute="bottom" constant="34" id="C3d-sa-JTv"/>
+                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="top" secondItem="fzx-6T-2eI" secondAttribute="top" id="Glo-qJ-8ri"/>
+                            <constraint firstItem="JNM-92-2QD" firstAttribute="leading" secondItem="fzx-6T-2eI" secondAttribute="trailing" constant="15" id="IlQ-pB-2Au"/>
+                            <constraint firstItem="QIO-Bv-Wak" firstAttribute="leading" secondItem="LxH-dc-Zs8" secondAttribute="trailing" constant="5" id="KVK-Jx-1tr"/>
+                            <constraint firstItem="fzx-6T-2eI" firstAttribute="top" secondItem="QIO-Bv-Wak" secondAttribute="bottom" constant="33" id="MDG-aO-6uY"/>
+                            <constraint firstItem="abH-Q2-JGA" firstAttribute="leading" secondItem="tVf-Ql-x26" secondAttribute="trailing" constant="15" id="N24-uc-Wqw"/>
+                            <constraint firstItem="uWc-Ej-n38" firstAttribute="top" secondItem="abH-Q2-JGA" secondAttribute="bottom" constant="34" id="SjU-Jh-b79"/>
+                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="leading" secondItem="LxH-dc-Zs8" secondAttribute="leading" id="bhC-eO-cP2"/>
                             <constraint firstItem="QIO-Bv-Wak" firstAttribute="centerX" secondItem="qEa-Ct-h4h" secondAttribute="centerX" id="bsI-Mu-3ug"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="abH-Q2-JGA" secondAttribute="trailing" constant="38" id="juh-jL-FzZ"/>
-                            <constraint firstItem="abH-Q2-JGA" firstAttribute="top" secondItem="Sup-Ez-xjA" secondAttribute="bottom" constant="96" id="ny5-6T-G2L"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="JNM-92-2QD" secondAttribute="trailing" constant="38" id="sMg-yy-aHh"/>
-                            <constraint firstItem="ITQ-7A-7Rq" firstAttribute="top" secondItem="JNM-92-2QD" secondAttribute="bottom" constant="159" id="syQ-78-cJf"/>
+                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="top" secondItem="LxH-dc-Zs8" secondAttribute="bottom" constant="33" id="fZ8-Bq-Z8V"/>
+                            <constraint firstItem="LxH-dc-Zs8" firstAttribute="top" secondItem="fdg-AL-tGY" secondAttribute="bottom" constant="34" id="ogk-c9-kuF"/>
+                            <constraint firstItem="tVf-Ql-x26" firstAttribute="leading" secondItem="fdg-AL-tGY" secondAttribute="trailing" constant="10" id="rJz-eB-iea"/>
+                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="leading" secondItem="fdg-AL-tGY" secondAttribute="leading" id="ryR-gN-qk0"/>
                             <constraint firstItem="QIO-Bv-Wak" firstAttribute="centerY" secondItem="qEa-Ct-h4h" secondAttribute="centerY" id="vWO-Vs-KFl"/>
+                            <constraint firstItem="JNM-92-2QD" firstAttribute="top" secondItem="uWc-Ej-n38" secondAttribute="bottom" constant="33" id="yMe-Iu-rCr"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OFb-g1-oqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1072" y="75"/>
+            <point key="canvasLocation" x="1071.5" y="74.5"/>
         </scene>
     </scenes>
     <resources>
