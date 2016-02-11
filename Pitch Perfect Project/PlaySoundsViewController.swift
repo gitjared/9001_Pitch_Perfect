@@ -17,12 +17,10 @@ class PlaySoundsViewController: UIViewController {
     var audioFile:AVAudioFile!
     
     override func viewDidLoad() {
-        
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL:receivedAudio.filePathURL)
             audioFile = try AVAudioFile(forReading: receivedAudio.filePathURL)
             audioPlayer.enableRate = true
-            
             audioEngine = AVAudioEngine()
             
         } catch let error as NSError {
@@ -68,10 +66,11 @@ class PlaySoundsViewController: UIViewController {
         changePitchEffect.pitch = pitch
         audioEngine.attachNode(changePitchEffect)
         
-        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format:nil)
-        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
+        audioEngine.connect(audioPlayerNode, to: changePitchEffect, format:audioFile.processingFormat)
+        audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: audioFile.processingFormat)
         
         audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
         do {
             try audioEngine.start()
         } catch _ {
@@ -80,35 +79,62 @@ class PlaySoundsViewController: UIViewController {
         audioPlayerNode.play()
     }
     
+    
     @IBAction func darthvaderButton(sender: AnyObject) {
-        playAudioWithVariablePitch(-387)
+        playAudioWithVariablePitch(-397)
     }
     
     @IBAction func stopButton(sender: AnyObject) {
         stopReset()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func playButtonTapped(sender: AnyObject) {
+        stopReset()
+        
+        let audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        let reverb = AVAudioUnitReverb()
+        reverb.loadFactoryPreset(AVAudioUnitReverbPreset.Cathedral)
+        reverb.wetDryMix = 35
+        
+        audioEngine.attachNode(reverb)
+        
+        audioEngine.connect(audioPlayerNode, to: reverb, format: audioFile.processingFormat)
+        audioEngine.connect(reverb, to: audioEngine.outputNode, format: audioFile.processingFormat)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
+        do {
+            try audioEngine.start()
+        } catch _ {
+        }
+        audioPlayerNode.play()
     }
+    
+    @IBAction func distortionButtonPress(sender: AnyObject) {
+        stopReset()
+        
+        let audioPlayerNode = AVAudioPlayerNode()
+        audioEngine.attachNode(audioPlayerNode)
+        
+        let distortion = AVAudioUnitDistortion()
+        distortion.loadFactoryPreset(AVAudioUnitDistortionPreset.SpeechWaves)
+        distortion.wetDryMix = 40
+        
+        audioEngine.attachNode(distortion)
+        
+        audioEngine.connect(audioPlayerNode, to: distortion, format: audioFile.processingFormat)
+        audioEngine.connect(distortion, to: audioEngine.outputNode, format: audioFile.processingFormat)
+        
+        audioPlayerNode.scheduleFile(audioFile, atTime: nil, completionHandler: nil)
+        
+        do {
+            try audioEngine.start()
+        } catch _ {
+        }
+        audioPlayerNode.play()
+    }
+    
 }
-
-/*
-How to create the reverb effect:
-
-Stop all audio
-Create an instance of AVAudioPlayerNode
-Attach this variable to the audioEngine previously created
-Create an instance of AVAudioUnitReverb
-Use loadFactoryPreset to configure the Reverb Audio Unit
-Apply the wetDryMix (normally 50 is enough)
-Attach the instance of AVAudioUnitReverb you created to the audioEngine previously created
-Connect your instance of AVAudioPlayerNode to the AVAudioUnitReverb using .connect
-Connect your instance of AVAudioUnitReverb to your outputNode's audioEngine
-Use the startAndReturnError(nil) property in your audioEngine instance
-Play the instance of AVAudioPlayerNode
-
-*/
-
 

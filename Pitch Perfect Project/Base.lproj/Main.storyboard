@@ -206,19 +206,24 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LxH-dc-Zs8">
-                                <rect key="frame" x="61" y="303" width="91" height="61"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="56" y="303" width="96" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cS-wj-lPd">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="61"/>
+                                        <color key="backgroundColor" red="0.11372549830000001" green="0.1019607931" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                        <state key="normal" title="Distortion">
+                                            <color key="titleColor" red="0.98127329539999997" green="1" blue="0.94002053090000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="distortionButtonPress:" destination="iEE-q5-1vV" eventType="touchUpInside" id="AJM-gl-rzn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.11372549830000001" green="0.1019607931" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="C8T-zD-cAW"/>
-                                    <constraint firstAttribute="width" constant="91" id="duB-Xa-dcJ"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-Ej-n38">
-                                <rect key="frame" x="228" y="303" width="90" height="61"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="61" id="UAr-vb-vsG"/>
-                                    <constraint firstAttribute="width" constant="90" id="WEH-D0-TiA"/>
+                                    <constraint firstAttribute="width" constant="96" id="duB-Xa-dcJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzx-6T-2eI">
@@ -249,12 +254,39 @@
                                     <action selector="rabbitButton:" destination="iEE-q5-1vV" eventType="touchUpInside" id="7sE-CM-Be1"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uWc-Ej-n38">
+                                <rect key="frame" x="224" y="303" width="96" height="61"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbR-L4-qBE">
+                                        <rect key="frame" x="17" y="0.0" width="62" height="61"/>
+                                        <color key="backgroundColor" red="0.11372549830000001" green="0.1019607931" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="62" id="u8s-a9-Lhs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="17"/>
+                                        <state key="normal" title="Reverb">
+                                            <color key="titleColor" red="0.98127329539999997" green="1" blue="0.94002053090000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playButtonTapped:" destination="iEE-q5-1vV" eventType="touchUpInside" id="raJ-2W-nBo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.11372549830000001" green="0.1019607931" blue="0.96078437569999997" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstItem="UbR-L4-qBE" firstAttribute="centerX" secondItem="uWc-Ej-n38" secondAttribute="centerX" id="Rnp-H6-W3A"/>
+                                    <constraint firstAttribute="height" constant="61" id="UAr-vb-vsG"/>
+                                    <constraint firstAttribute="width" constant="96" id="WEH-D0-TiA"/>
+                                    <constraint firstAttribute="bottom" secondItem="UbR-L4-qBE" secondAttribute="bottom" id="cBe-ux-0oP"/>
+                                    <constraint firstItem="UbR-L4-qBE" firstAttribute="top" secondItem="uWc-Ej-n38" secondAttribute="top" id="yjX-1W-MH9"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vOA-4Z-rDo" firstAttribute="baseline" secondItem="JNM-92-2QD" secondAttribute="baseline" id="08Q-Rc-y4i"/>
                             <constraint firstItem="fzx-6T-2eI" firstAttribute="leading" secondItem="vOA-4Z-rDo" secondAttribute="trailing" constant="10" id="867-Bc-P1G"/>
-                            <constraint firstItem="uWc-Ej-n38" firstAttribute="leading" secondItem="QIO-Bv-Wak" secondAttribute="trailing" constant="10" id="AU7-u8-rUM"/>
+                            <constraint firstItem="uWc-Ej-n38" firstAttribute="leading" secondItem="QIO-Bv-Wak" secondAttribute="trailing" constant="6" id="AU7-u8-rUM"/>
                             <constraint firstItem="QIO-Bv-Wak" firstAttribute="top" secondItem="tVf-Ql-x26" secondAttribute="bottom" constant="34" id="C3d-sa-JTv"/>
                             <constraint firstItem="vOA-4Z-rDo" firstAttribute="top" secondItem="fzx-6T-2eI" secondAttribute="top" id="Glo-qJ-8ri"/>
                             <constraint firstItem="JNM-92-2QD" firstAttribute="leading" secondItem="fzx-6T-2eI" secondAttribute="trailing" constant="15" id="IlQ-pB-2Au"/>
@@ -262,7 +294,7 @@
                             <constraint firstItem="fzx-6T-2eI" firstAttribute="top" secondItem="QIO-Bv-Wak" secondAttribute="bottom" constant="33" id="MDG-aO-6uY"/>
                             <constraint firstItem="abH-Q2-JGA" firstAttribute="leading" secondItem="tVf-Ql-x26" secondAttribute="trailing" constant="15" id="N24-uc-Wqw"/>
                             <constraint firstItem="uWc-Ej-n38" firstAttribute="top" secondItem="abH-Q2-JGA" secondAttribute="bottom" constant="34" id="SjU-Jh-b79"/>
-                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="leading" secondItem="LxH-dc-Zs8" secondAttribute="leading" id="bhC-eO-cP2"/>
+                            <constraint firstItem="vOA-4Z-rDo" firstAttribute="leading" secondItem="LxH-dc-Zs8" secondAttribute="leading" constant="5" id="bhC-eO-cP2"/>
                             <constraint firstItem="QIO-Bv-Wak" firstAttribute="centerX" secondItem="qEa-Ct-h4h" secondAttribute="centerX" id="bsI-Mu-3ug"/>
                             <constraint firstItem="vOA-4Z-rDo" firstAttribute="top" secondItem="LxH-dc-Zs8" secondAttribute="bottom" constant="33" id="fZ8-Bq-Z8V"/>
                             <constraint firstItem="LxH-dc-Zs8" firstAttribute="top" secondItem="fdg-AL-tGY" secondAttribute="bottom" constant="34" id="ogk-c9-kuF"/>
